@@ -1,0 +1,160 @@
+/* Import premium fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MAANG-level base styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply font-sans text-white bg-black;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar for premium feel */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-neutral-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neutral-300 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neutral-400;
+  }
+
+  /* Focus styles for accessibility */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-white;
+  }
+}
+
+/* Component layer for reusable patterns */
+@layer components {
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-md border border-white/20;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  .bg-gradient-radial {
+    background: radial-gradient(circle, var(--tw-gradient-stops));
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
+  }
+
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Button variants following design system */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl bg-primary-600 px-6 py-3 text-base font-semibold text-white shadow-elevation-2 transition-all duration-200 hover:bg-primary-700 hover:shadow-elevation-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:bg-primary-800 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl bg-white px-6 py-3 text-base font-semibold text-neutral-900 shadow-elevation-1 ring-1 ring-inset ring-neutral-200 transition-all duration-200 hover:bg-neutral-50 hover:shadow-elevation-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:bg-neutral-100 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-xl px-6 py-3 text-base font-semibold text-neutral-700 transition-all duration-200 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 active:bg-neutral-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Card styles with elevation */
+  .card {
+    @apply rounded-2xl bg-white shadow-elevation-1 ring-1 ring-neutral-200/50 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply shadow-elevation-3 ring-neutral-200;
+  }
+
+  /* Hero text styling */
+  .hero-text {
+    @apply text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight leading-tight;
+  }
+
+  .hero-subtext {
+    @apply text-lg sm:text-xl lg:text-2xl text-neutral-600 leading-relaxed;
+  }
+}
+
+/* Performance optimizations */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Utilities for animations and interactions */
+@layer utilities {
+  .animate-gradient {
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Staggered animations for lists */
+  .stagger-children > * {
+    animation-delay: calc(var(--stagger-delay, 100ms) * var(--index, 0));
+  }
+
+  /* Image overlay effects */
+  .image-overlay::before {
+    @apply absolute inset-0 bg-gradient-to-t from-neutral-900/60 via-neutral-900/20 to-transparent;
+    content: '';
+    z-index: 1;
+  }
+
+  /* Text selection styling */
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
+  ::-moz-selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+  }
+}
