@@ -2,7 +2,9 @@
 
 > Embark on a cosmic journey through my UX/UI design universe with stunning 3D parallax effects
 
-**🌐 Live Site:** [https://space-intro.netlify.app/](https://space-intro.netlify.app/)
+**🌐 Live Portfolio:**
+- **Netlify:** [https://space-intro.netlify.app/](https://space-intro.netlify.app/)
+- **GitHub Pages:** [https://vikas9793.github.io/space-intro/](https://vikas9793.github.io/space-intro/)
 
 A cinematic space-themed portfolio website built with Next.js 15, featuring immersive scroll animations and 3D parallax effects.
 
