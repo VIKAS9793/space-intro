@@ -2,6 +2,8 @@
 
 > Embark on a cosmic journey through my UX/UI design universe with stunning 3D parallax effects
 
+**🌐 Live Site:** [https://space-intro.netlify.app/](https://space-intro.netlify.app/)
+
 A cinematic space-themed portfolio website built with Next.js 15, featuring immersive scroll animations and 3D parallax effects.
 
 ## ✨ Features
@@ -58,34 +60,16 @@ npm start
 
 ## 📦 Deployment
 
-### 🔷 Vercel (Recommended)
+### 🔷 GitHub Pages (Automated)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/VIKAS9793/space-intro)
+The project is configured for automatic deployment to GitHub Pages:
 
-**Manual Deployment:**
+1. Go to your repository **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Push to `main` branch - the site will automatically build and deploy
+4. Your site will be available at: `https://VIKAS9793.github.io/space-intro/`
 
-1. Install Vercel CLI:
-   ```bash
-   npm install -g vercel
-   ```
-
-2. Deploy:
-   ```bash
-   vercel
-   ```
-
-3. For production:
-   ```bash
-   vercel --prod
-   ```
-
-**CI/CD Setup:**
-
-The project includes GitHub Actions for automatic deployment. Add these secrets to your GitHub repository:
-
-- `VERCEL_TOKEN`: Your Vercel token
-- `VERCEL_ORG_ID`: Your Vercel organization ID
-- `VERCEL_PROJECT_ID`: Your Vercel project ID
+The GitHub Actions workflow (`.github/workflows/github-pages.yml`) handles the build and deployment automatically.
 
 ### 🟢 Netlify
 

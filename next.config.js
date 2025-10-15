@@ -1,10 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  basePath: process.env.GITHUB_PAGES ? '/space-intro' : '',
   experimental: {
     // Next.js optimizations
     optimizePackageImports: ['lucide-react'],
   },
   images: {
+    unoptimized: true, // Required for static export
     remotePatterns: [
       {
         protocol: 'https',
