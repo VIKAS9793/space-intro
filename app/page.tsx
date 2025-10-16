@@ -52,9 +52,9 @@ export default function CinematicSpacePortfolio() {
   const solarRotateY = useTransform(scrollYProgress, [0.55, 0.8], [-30, 30])
   const solarZ = useTransform(scrollYProgress, [0.55, 0.8], [-300, 50])
   
-  const earthScale = useTransform(scrollYProgress, [0.75, 1], [0.1, 2])
-  const earthRotate = useTransform(scrollYProgress, [0.75, 1], [0, 360])
-  const earthZ = useTransform(scrollYProgress, [0.75, 1], [-400, 0])
+  const earthScale = useTransform(scrollYProgress, [0.7, 0.95], [0.5, 2.8])
+  const earthRotate = useTransform(scrollYProgress, [0.7, 0.95], [0, 360])
+  const earthZ = useTransform(scrollYProgress, [0.7, 0.95], [-400, 0])
   
   // Astronaut 3D journey
   const astronautY = useTransform(scrollYProgress, [0, 0.3], [-50, 600])
@@ -96,7 +96,7 @@ export default function CinematicSpacePortfolio() {
       </nav>
 
       {/* Cinematic Scroll Container */}
-      <div style={{ height: '700vh' }} className="relative">
+      <div style={{ height: '1200vh' }} className="relative">
         
         {/* Fixed Viewport with 3D Perspective */}
         <div className="fixed inset-0 bg-black overflow-hidden" style={{ perspective: '2000px', perspectiveOrigin: 'center center' }}>
@@ -248,7 +248,7 @@ export default function CinematicSpacePortfolio() {
               scale: earthScale,
               rotateZ: earthRotate,
               z: earthZ,
-              opacity: scrollYProgress.get() >= 0.75 ? 1 : 0,
+              opacity: scrollYProgress.get() >= 0.7 && scrollYProgress.get() < 0.98 ? 1 : scrollYProgress.get() >= 0.98 ? Math.max(0, 1 - (scrollYProgress.get() - 0.98) / 0.02) : 0,
               transformStyle: 'preserve-3d'
             }}
           >
@@ -355,6 +355,16 @@ export default function CinematicSpacePortfolio() {
                   <p className="text-xl md:text-2xl text-purple-200">
                     Exploring infinite creative possibilities
                   </p>
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="text-white text-sm md:text-base mt-8 max-w-2xl mx-auto space-y-2 bg-black/40 backdrop-blur-sm p-6 rounded-2xl border border-white/10"
+                  >
+                    <p className="font-medium">💫 A nebula can span hundreds of light-years and birth thousands of stars</p>
+                    <p className="font-medium">✨ The Pillars of Creation in the Eagle Nebula are 5 light-years tall</p>
+                    <p className="font-medium">🌟 Nebulae are the cosmic nurseries where stars are born from gas and dust</p>
+                  </motion.div>
                 </motion.div>
               )}
 
@@ -374,6 +384,16 @@ export default function CinematicSpacePortfolio() {
                   <p className="text-xl md:text-2xl text-blue-200">
                     Mastering complex interface systems
                   </p>
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="text-white text-sm md:text-base mt-8 max-w-2xl mx-auto space-y-2 bg-black/40 backdrop-blur-sm p-6 rounded-2xl border border-white/10"
+                  >
+                    <p className="font-medium">🌌 Our Milky Way galaxy contains over 200 billion stars</p>
+                    <p className="font-medium">🌀 The galaxy completes one rotation every 225 million years</p>
+                    <p className="font-medium">💠 At the center lies a supermassive black hole 4 million times the Sun's mass</p>
+                  </motion.div>
                 </motion.div>
               )}
 
@@ -393,11 +413,21 @@ export default function CinematicSpacePortfolio() {
                   <p className="text-xl md:text-2xl text-orange-200">
                     Bringing order to digital chaos
                   </p>
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="text-white text-sm md:text-base mt-8 max-w-2xl mx-auto space-y-2 bg-black/40 backdrop-blur-sm p-6 rounded-2xl border border-white/10"
+                  >
+                    <p className="font-medium">☀️ Light from the Sun takes 8 minutes to reach Earth</p>
+                    <p className="font-medium">🪐 Our solar system formed 4.6 billion years ago from a collapsing molecular cloud</p>
+                    <p className="font-medium">⚡ The Sun converts 600 million tons of hydrogen into helium every second</p>
+                  </motion.div>
                 </motion.div>
               )}
 
               {/* Earth Scene */}
-              {scrollYProgress.get() >= 0.75 && (
+              {scrollYProgress.get() >= 0.7 && scrollYProgress.get() < 0.99 && (
                 <motion.div
                   key="earth"
                   initial={{ opacity: 0, y: 100 }}
@@ -411,25 +441,16 @@ export default function CinematicSpacePortfolio() {
                   <p className="text-xl md:text-2xl text-green-200 mb-8">
                     Where human-centered design begins
                   </p>
-                  
-                  <motion.button
-                    className="pointer-events-auto px-12 py-6 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white font-bold text-xl rounded-2xl shadow-2xl hover:shadow-blue-500/25 transform transition-all duration-500"
-                    whileHover={{ 
-                      scale: 1.05,
-                      boxShadow: "0 25px 50px rgba(59, 130, 246, 0.3)"
-                    }}
-                    whileTap={{ scale: 0.95 }}
-                    animate={{
-                      boxShadow: [
-                        "0 20px 40px rgba(59, 130, 246, 0.2)",
-                        "0 25px 50px rgba(147, 51, 234, 0.3)",
-                        "0 20px 40px rgba(59, 130, 246, 0.2)"
-                      ]
-                    }}
-                    transition={{ duration: 2, repeat: Infinity }}
+                  <motion.div 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="text-white text-sm md:text-base mt-8 max-w-2xl mx-auto space-y-2 bg-black/40 backdrop-blur-sm p-6 rounded-2xl border border-white/10"
                   >
-                    🚀 Launch Your Project
-                  </motion.button>
+                    <p className="font-medium">🌍 Earth is the only known planet to harbor life in the universe</p>
+                    <p className="font-medium">🌊 71% of Earth's surface is covered by water</p>
+                    <p className="font-medium">🛡️ Earth's magnetic field protects us from harmful solar radiation</p>
+                  </motion.div>
                 </motion.div>
               )}
             </div>
@@ -513,8 +534,8 @@ export default function CinematicSpacePortfolio() {
               style={{ transformStyle: 'preserve-3d' }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1600694871190-8c78f0e5bb2f?q=80&w=800&h=1000&auto=format&fit=crop"
-                alt="Full body astronaut in spacesuit"
+                src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1200&h=1200&auto=format&fit=crop"
+                alt="Black hole dark space"
                 className="w-full h-96 object-cover rounded-3xl shadow-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-3xl" />
