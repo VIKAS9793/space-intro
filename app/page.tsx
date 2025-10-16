@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react'
 import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
+import Image from 'next/image'
 
 export default function CinematicSpacePortfolio() {
   const [particles, setParticles] = useState<Array<{depth: number, size: number, left: string, top: string, filter: string}>>([])  
@@ -405,7 +406,7 @@ export default function CinematicSpacePortfolio() {
                   >
                     <p className="font-medium">🌌 Our Milky Way galaxy contains over 200 billion stars</p>
                     <p className="font-medium">🌀 The galaxy completes one rotation every 225 million years</p>
-                    <p className="font-medium">💠 At the center lies a supermassive black hole 4 million times the Sun's mass</p>
+                    <p className="font-medium">💠 At the center lies a supermassive black hole 4 million times the Sun&apos;s mass</p>
                   </motion.div>
                 </motion.div>
               )}
@@ -461,8 +462,8 @@ export default function CinematicSpacePortfolio() {
                     className="text-white text-sm md:text-base mt-8 max-w-2xl mx-auto space-y-2 bg-black/40 backdrop-blur-sm p-6 rounded-2xl border border-white/10"
                   >
                     <p className="font-medium">🌍 Earth is the only known planet to harbor life in the universe</p>
-                    <p className="font-medium">🌊 71% of Earth's surface is covered by water</p>
-                    <p className="font-medium">🛡️ Earth's magnetic field protects us from harmful solar radiation</p>
+                    <p className="font-medium">🌊 71% of Earth&apos;s surface is covered by water</p>
+                    <p className="font-medium">🛡️ Earth&apos;s magnetic field protects us from harmful solar radiation</p>
                   </motion.div>
                 </motion.div>
               )}
@@ -487,11 +488,13 @@ export default function CinematicSpacePortfolio() {
       {/* About Section with 4K Images */}
       <section className="relative py-32 bg-black text-white overflow-hidden" style={{ contentVisibility: 'auto' }}>
         <div className="absolute inset-0">
-          <img 
+          <Image 
             src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=65&w=3840&h=2160&auto=format&fit=crop"
             alt="Space station interior"
-            loading="lazy"
-            className="w-full h-full object-cover opacity-20"
+            fill
+            className="object-cover opacity-20"
+            sizes="100vw"
+            priority={false}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/60" />
         </div>
@@ -544,14 +547,16 @@ export default function CinematicSpacePortfolio() {
               whileHover={{ scale: 1.05, rotateY: -5, z: 50 }}
               transition={{ duration: 1, delay: 0.2 }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative h-96"
               style={{ transformStyle: 'preserve-3d' }}
             >
-              <img 
+              <Image 
                 src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=65&w=1200&h=1200&auto=format&fit=crop"
                 alt="Black hole dark space"
-                loading="lazy"
-                className="w-full h-96 object-cover rounded-3xl shadow-2xl"
+                fill
+                className="object-cover rounded-3xl shadow-2xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority={false}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent rounded-3xl" />
             </motion.div>
@@ -562,11 +567,13 @@ export default function CinematicSpacePortfolio() {
       {/* Contact Section */}
       <section className="relative py-32 bg-gradient-to-b from-black via-gray-900 to-black text-white" style={{ contentVisibility: 'auto' }}>
         <div className="absolute inset-0 opacity-30">
-          <img 
+          <Image 
             src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=65&w=3840&h=2160&auto=format&fit=crop"
             alt="Earth from space"
-            loading="lazy"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority={false}
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/90" />
@@ -583,7 +590,7 @@ export default function CinematicSpacePortfolio() {
               Ready for Launch?
             </h2>
             <p className="text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
-              Let's embark on an extraordinary journey through digital space together
+              Let&apos;s embark on an extraordinary journey through digital space together
             </p>
             
             <motion.div

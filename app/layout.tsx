@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -61,16 +61,6 @@ export const metadata: Metadata = {
     description: 'Embark on a cosmic journey through innovative design and cutting-edge technology.',
     images: ['https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1200&h=630&auto=format&fit=crop'],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#0ea5e9' },
-    { media: '(prefers-color-scheme: dark)', color: '#0ea5e9' },
-  ],
   manifest: '/site.webmanifest',
   icons: {
     icon: [
@@ -84,6 +74,18 @@ export const metadata: Metadata = {
       { rel: 'mask-icon', url: '/safari-pinned-tab.svg', color: '#0ea5e9' },
     ],
   },
+}
+
+// Viewport configuration (Next.js 15+)
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#0ea5e9' },
+    { media: '(prefers-color-scheme: dark)', color: '#0ea5e9' },
+  ],
 }
 
 export default function RootLayout({
