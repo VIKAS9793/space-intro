@@ -20,14 +20,14 @@ const jetbrainsMono = JetBrains_Mono({
 // MAANG-level SEO optimization
 export const metadata: Metadata = {
   title: {
-    default: 'Space Intro - UX/UI Designer & Creative Technologist',
-    template: '%s | Space Intro'
+    default: 'VIKAS SAHANI - AI Product Manager & Creative Technologist',
+    template: '%s | VIKAS SAHANI'
   },
-  description: 'Embark on a cosmic journey through innovative design and cutting-edge technology. Exploring the universe of user experience with stellar creativity and interstellar precision.',
-  keywords: ['UX Designer', 'Frontend Developer', 'Creative Technologist', 'Portfolio', 'React', 'Next.js', 'Design Systems', 'User Experience'],
-  authors: [{ name: 'Portfolio Owner', url: 'https://portfolio.com' }],
-  creator: 'Portfolio Owner',
-  publisher: 'Portfolio Owner',
+  description: 'Embark on a cosmic journey through innovative design and cutting-edge technology. AI Product Manager crafting stellar user experiences with precision and creativity.',
+  keywords: ['AI Product Manager', 'UX Designer', 'Frontend Developer', 'Creative Technologist', 'Portfolio', 'React', 'Next.js', 'Design Systems'],
+  authors: [{ name: 'VIKAS SAHANI', url: 'https://space-intro.netlify.app/' }],
+  creator: 'VIKAS SAHANI',
+  publisher: 'VIKAS SAHANI',
   robots: {
     index: true,
     follow: true,
@@ -42,10 +42,10 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://space-intro.com',
-    title: 'Space Intro - UX/UI Designer & Creative Technologist',
+    url: 'https://space-intro.netlify.app/',
+    title: 'VIKAS SAHANI - AI Product Manager & Creative Technologist',
     description: 'Embark on a cosmic journey through innovative design and cutting-edge technology.',
-    siteName: 'Space Intro',
+    siteName: 'VIKAS SAHANI Portfolio',
     images: [
       {
         url: 'https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1200&h=630&auto=format&fit=crop',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Space Intro - UX/UI Designer & Creative Technologist',
+    title: 'VIKAS SAHANI - AI Product Manager & Creative Technologist',
     description: 'Embark on a cosmic journey through innovative design and cutting-edge technology.',
     images: ['https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=1200&h=630&auto=format&fit=crop'],
   },
@@ -101,7 +101,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="//images.unsplash.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" />
-        
+
         {/* Structured data for enhanced SEO */}
         <script
           type="application/ld+json"
@@ -109,18 +109,18 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Person',
-              name: 'Portfolio Owner',
-              jobTitle: 'UX Engineer & Creative Technologist',
+              name: 'VIKAS SAHANI',
+              jobTitle: 'AI Product Manager & Creative Technologist',
               description: 'Crafting exceptional digital experiences through innovative design and cutting-edge technology.',
-              url: 'https://portfolio.com',
+              url: 'https://space-intro.netlify.app/',
               sameAs: [
-                'https://linkedin.com/in/portfolio',
-                'https://github.com/portfolio',
-                'https://dribbble.com/portfolio',
+                'https://www.linkedin.com/in/vikas-sahani-727420358',
+                'https://github.com/VIKAS9793',
               ],
               knowsAbout: [
+                'AI Product Management',
                 'UX/UI Design',
-                'Frontend Development', 
+                'Frontend Development',
                 'Design Systems',
                 'React',
                 'Next.js',
@@ -130,7 +130,7 @@ export default function RootLayout({
             }),
           }}
         />
-        
+
         {/* Analytics and tracking (placeholder) */}
         {process.env.NODE_ENV === 'production' && (
           <>
@@ -154,18 +154,18 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {/* Skip to content link for accessibility */}
-        <a 
-          href="#main-content" 
+        <a
+          href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 btn-primary"
         >
           Skip to main content
         </a>
-        
+
         {/* Main application container */}
-        <div id="root" className="min-h-screen bg-white">
+        <main id="main-content" className="min-h-screen bg-black">
           {children}
-        </div>
-        
+        </main>
+
         {/* Service Worker registration for PWA capabilities */}
         {process.env.NODE_ENV === 'production' && (
           <script

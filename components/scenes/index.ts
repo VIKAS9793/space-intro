@@ -1,0 +1,5 @@
+export { BlackHoleScene } from './BlackHoleScene'
+export { NebulaScene } from './NebulaScene'
+export { GalaxyScene } from './GalaxyScene'
+export { SolarScene } from './SolarScene'
+export { EarthScene } from './EarthScene'

@@ -1,6 +1,6 @@
 # 🚀 Space Intro Portfolio
 
-> Embark on a cosmic journey through my UX/UI design universe with stunning 3D parallax effects
+> Embark on a cosmic journey through my AI/Product design universe with stunning 3D parallax effects
 
 **🌐 Live Portfolio:**
 - **Netlify:** [https://space-intro.netlify.app/](https://space-intro.netlify.app/)
@@ -12,16 +12,18 @@ A cinematic space-themed portfolio website built with Next.js 15, featuring imme
 
 - 🌌 **Cinematic Space Journey**: Scroll through black holes, nebulas, galaxies, and solar systems
 - 🎨 **3D Parallax Effects**: Stunning depth and motion with Framer Motion
-- ⚡ **Next.js 15**: Built with the latest App Router and React Server Components
+- ⚡ **Next.js 15**: Built with the latest App Router and static export
 - 🎭 **Responsive Design**: Optimized for all devices
 - 🚀 **Performance Optimized**: Static generation for lightning-fast load times
+- ♿ **Accessible**: WCAG AA compliant with skip links and ARIA labels
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 15.5.5
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Language**: TypeScript
+- **Framework**: Next.js 15.0.3 (stable)
+- **UI Library**: React 18.3.1 (stable)
+- **Styling**: Tailwind CSS 3.4
+- **Animations**: Framer Motion 11.15.0 (stable)
+- **Language**: TypeScript 5.6
 - **Icons**: Lucide React
 
 
@@ -125,14 +127,26 @@ For static hosting (GitHub Pages, AWS S3, etc.):
 ```
 space-intro/
 ├── app/
-│   ├── layout.tsx      # Root layout
-│   └── page.tsx        # Main page with space animation
-├── lib/               # Utility functions
-├── public/            # Static assets
-├── .github/
-│   └── workflows/
-│       └── deploy.yml # CI/CD workflow
-└── next.config.js     # Next.js configuration
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout with SEO
+│   └── page.tsx          # Main page (componentized)
+├── components/
+│   ├── Navigation.tsx    # Fixed nav header
+│   ├── ProgressBar.tsx   # Scroll progress
+│   ├── ParticleField.tsx # 3D particle system
+│   ├── ContentOverlay.tsx# Scene text content
+│   ├── AboutSection.tsx  # Mission Commander
+│   ├── ContactSection.tsx# Contact links
+│   └── scenes/           # Space scene components
+│       ├── BlackHoleScene.tsx
+│       ├── NebulaScene.tsx
+│       ├── GalaxyScene.tsx
+│       ├── SolarScene.tsx
+│       └── EarthScene.tsx
+├── types/                # TypeScript interfaces
+├── lib/                  # Utility functions
+├── .github/workflows/    # CI/CD with quality gates
+└── next.config.js        # Next.js configuration
 ```
 
 ## 🎨 Customization

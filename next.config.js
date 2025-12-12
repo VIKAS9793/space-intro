@@ -1,18 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          { key: 'X-Frame-Options', value: 'DENY' },
-          { key: 'X-Content-Type-Options', value: 'nosniff' },
-          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' }
-        ]
-      }
-    ]
-  },
+  // Note: Security headers should be configured at CDN/hosting level (Netlify/Vercel)
+  // They don't work with static export
   basePath: process.env.GITHUB_PAGES ? '/space-intro' : '',
   experimental: {
     // Next.js optimizations
