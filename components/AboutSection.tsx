@@ -18,7 +18,7 @@ export function AboutSection() {
         >
             <div className="absolute inset-0">
                 <Image
-                    src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=65&w=3840&h=2160&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?q=65&w=1920&h=1080&auto=format&fit=crop"
                     alt=""
                     fill
                     className="object-cover opacity-20"

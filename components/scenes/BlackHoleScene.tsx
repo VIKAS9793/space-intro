@@ -28,7 +28,7 @@ export function BlackHoleScene({ scrollYProgress }: SceneProps) {
             <motion.div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=65&w=3840&h=2160&auto=format&fit=crop')`,
+                    backgroundImage: `url('https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=65&w=1920&h=1080&auto=format&fit=crop')`,
                     z: bgZ
                 }}
             />

@@ -30,7 +30,7 @@ export function NebulaScene({ scrollYProgress }: SceneProps) {
             <motion.div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=65&w=3840&h=2160&auto=format&fit=crop')`,
+                    backgroundImage: `url('https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=65&w=1920&h=1080&auto=format&fit=crop')`,
                     z: bgZ,
                     scale: bgScale
                 }}

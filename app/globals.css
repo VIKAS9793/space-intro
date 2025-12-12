@@ -4,6 +4,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Lightweight particle animation - replaces heavy Framer Motion */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
 /* MAANG-level base styles */
 @layer base {
   html {
@@ -114,13 +133,21 @@
   }
 
   @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   /* Staggered animations for lists */
-  .stagger-children > * {
+  .stagger-children>* {
     animation-delay: calc(var(--stagger-delay, 100ms) * var(--index, 0));
   }
 

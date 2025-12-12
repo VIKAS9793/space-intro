@@ -46,7 +46,7 @@ export function ContactSection() {
         >
             <div className="absolute inset-0 opacity-30">
                 <Image
-                    src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=65&w=3840&h=2160&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=65&w=1920&h=1080&auto=format&fit=crop"
                     alt=""
                     fill
                     className="object-cover"

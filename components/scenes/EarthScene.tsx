@@ -30,7 +30,7 @@ export function EarthScene({ scrollYProgress }: SceneProps) {
             <motion.div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=65&w=3840&h=2160&auto=format&fit=crop')`,
+                    backgroundImage: `url('https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=65&w=1920&h=1080&auto=format&fit=crop')`,
                     z: bgZ,
                     scale: bgScale
                 }}

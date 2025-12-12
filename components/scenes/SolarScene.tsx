@@ -30,7 +30,7 @@ export function SolarScene({ scrollYProgress }: SceneProps) {
             <motion.div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                    backgroundImage: `url('https://images.unsplash.com/photo-1614732414444-096e5f1122d5?q=65&w=3840&h=2160&auto=format&fit=crop')`,
+                    backgroundImage: `url('https://images.unsplash.com/photo-1614732414444-096e5f1122d5?q=65&w=1920&h=1080&auto=format&fit=crop')`,
                     z: bgZ,
                     scale: bgScale
                 }}
